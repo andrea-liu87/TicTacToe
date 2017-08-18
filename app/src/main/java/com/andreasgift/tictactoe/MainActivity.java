@@ -6,6 +6,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
+import android.widget.GridLayout;
 import android.widget.ImageView;
 import android.widget.Toast;
 
@@ -14,13 +16,15 @@ public class MainActivity extends AppCompatActivity {
     // Player 1 = 0, Player 2 = 1
     int player = 0;
     int[] gameState = {2,2,2, 2,2,2, 2,2,2};
+    Button endButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        endButton = (Button) findViewById(R.id.end_button);
         setUI();
+
     }
 
     //This method to trigger the image appear when palyer click the box
@@ -34,14 +38,19 @@ public class MainActivity extends AppCompatActivity {
             if(player == 0){
             view1.setImageResource(android.R.drawable.ic_delete);
                 if(winningState(player,gameState)){
-                    Toast.makeText(MainActivity.this,"You win!",Toast.LENGTH_LONG).show();}
+                    endButton.setVisibility(View.VISIBLE);
+                    endButton.setText("Player 1 win!"+"\n"+"Play again?");}
             player = 1;
             } else {
             view1.setImageResource(android.R.drawable.presence_online);
                 if(winningState(player,gameState)){
-                    Toast.makeText(MainActivity.this,"You win!",Toast.LENGTH_LONG).show();}
+                    endButton.setVisibility(View.VISIBLE);
+                    endButton.setText("Player 1 win!"+"\n"+"Play again?");}
             player = 0;
             }
+        } else {
+            endButton.setVisibility(View.VISIBLE);
+            endButton.setText("It is a draw!"+"\n"+"Play again?");
         }
     }
 
@@ -57,6 +66,18 @@ public class MainActivity extends AppCompatActivity {
             else if(game[0] == i && game[4] == i && game[8] == i){win = true;}
             else if(game[2] == i && game[4] == i && game[6] == i){win = true;}
         return win;
+    }
+
+    //This method will restart the game
+    public void endButton (View view){
+        for (int i = 0 ; i<gameState.length; i++){
+            gameState[i]=2;
+            ImageView imageView = (ImageView)findViewById(R.id.grid_layout).findViewWithTag(String.valueOf(i)
+            );
+            imageView.setImageResource(0);
+            endButton.setVisibility(View.INVISIBLE);
+        }
+
     }
 
     //This method to set the UI fix with whatever screen size

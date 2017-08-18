@@ -6,12 +6,22 @@
     android:layout_height="match_parent"
     tools:context="com.andreasgift.tictactoe.MainActivity">
 
+    <Button android:layout_gravity="center"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:id="@+id/end_button"
+        android:fontFamily="holo"
+        android:textSize="20sp"
+        android:visibility="invisible"
+        android:onClick="endButton"/>
+
     <GridLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_margin="10dp"
         android:background="@android:color/darker_gray"
+        android:id="@+id/grid_layout"
         android:columnCount="3"
         android:rowCount="3">
 
