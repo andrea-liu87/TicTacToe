@@ -1,4 +1,4 @@
-package com.andreasgift.tictactoe;
+package edu.andreasgift.tictactoe;
 
 import org.junit.Test;
 

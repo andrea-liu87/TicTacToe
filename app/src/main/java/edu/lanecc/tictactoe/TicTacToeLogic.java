@@ -1,35 +1,34 @@
-package com.andreasgift.tictactoe;
+package edu.andreasgift.tictactoe;
+
 
 public class TicTacToeLogic {
 
     /********* Instance variables ***********/
+
+    private String playerOName;
+    private String playerXName;
+
+    // Initialize to player O
+    private XO currentPlayer = XO.O;
     
-    private String player1Name;
-    private String player2Name;
+    // Initialize the array so each square is empty
+    private XO[] gameState = {XO.Empty, XO.Empty, XO.Empty, 
+            XO.Empty, XO.Empty, XO.Empty, 
+            XO.Empty, XO.Empty, XO.Empty};
 
-    // Player 1 = 0, Player 2 = 1
-    private int currentPlayer = 0;
-    private int[] gameState = {2,2,2, 2,2,2, 2,2,2};
+    // Setters
 
-    //getters and setters
-
-    public void setPlayer1Name(String player1Name) {
-        this.player1Name = player1Name;
+    public void setPlayerOName(String playerOName) {
+        this.playerOName = playerOName;
     }
 
-    public void setPlayer2Name(String player2Name) {
-        this.player2Name = player2Name;
+    public void setPlayerXName(String playerXName) {
+        this.playerXName = playerXName;
     }
 
-    public String getPlayer1Name() {
-        return player1Name;
-    }
+    // Getters
 
-    public String getPlayer2Name() {
-        return player2Name;
-    }
-
-    public int getCurrentPlayer() {
+    public XO getCurrentPlayer() {
         return currentPlayer;
     }
 
@@ -37,19 +36,33 @@ public class TicTacToeLogic {
         return gameState.length;
     }
 
+    public XO[] getGameState() {
+        return gameState;
+}
+
+
     /********** Game-play logic *********/
 
+    public String getCurrentPlayerName() {
+        return currentPlayer == XO.O ? playerOName : playerXName;
+    }
+
     public boolean makeMove(int position) {
-        if (gameState[position] == 2) {
+        // Make sure the squre is empty
+        if (gameState[position] == XO.Empty) {
+            // Mark the square with an X or O
             gameState[position] = currentPlayer;
-            currentPlayer = (currentPlayer == 0) ? 1 : 0;
+            // Switch players
+            currentPlayer = (currentPlayer == XO.O) ? XO.X : XO.O;
             return true;
         }
+        // The square wasn't empty
         return false;
     }
     
     public boolean winningState() {
         boolean win = false;
+        // Check for each of the eight possible winning sets of X's or O's
         if(gameState[0] == currentPlayer && gameState[1] == currentPlayer && gameState[2] == currentPlayer){win= true;}
         else if(gameState[3] == currentPlayer && gameState[4] == currentPlayer && gameState[5] == currentPlayer){win = true;}
         else if(gameState[6] == currentPlayer && gameState[7] == currentPlayer && gameState[8] == currentPlayer){win= true;}
@@ -62,8 +75,12 @@ public class TicTacToeLogic {
     }
 
     public void newGame() {
+        // Reset the squares to all be empty
         for (int i = 0 ; i<gameState.length; i++)
-            gameState[i] = 2;
+            gameState[i] = XO.Empty;
+        // Set the first player to O
+        // TODO: Make this random so O doesn't always start
+        currentPlayer = XO.O;
     }
 
 }

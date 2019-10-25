@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.andreasgift.tictactoe.MainActivity">
+    tools:context="com.andreasgift.tictactoe.edu.andreasgift.tictactoe.MainActivity">
 
     <android.support.constraint.ConstraintLayout
         android:id="@+id/constraint_layout"
@@ -12,13 +12,14 @@
         android:layout_height="match_parent">
 
         <Button
-            android:id="@+id/endButton"
+            android:id="@+id/resetButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="20dp"
-            android:onClick="endButton"
+            android:onClick="resetButton"
             android:textSize="20sp"
+            android:visibility="invisible"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
@@ -158,17 +159,17 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintGuide_begin="141dp" />
+            app:layout_constraintGuide_begin="151dp" />
 
         <android.support.constraint.Guideline
             android:id="@+id/guideline10"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintGuide_begin="518dp" />
+            app:layout_constraintGuide_begin="499dp" />
 
         <EditText
-            android:id="@+id/player1EditText"
+            android:id="@+id/playerOEditText"
             android:layout_width="153dp"
             android:layout_height="56dp"
             android:layout_marginBottom="12dp"
@@ -176,12 +177,12 @@
             android:hint="Enter name"
             android:inputType="textPersonName"
             app:layout_constraintBottom_toTopOf="@+id/guideline9"
-            app:layout_constraintEnd_toStartOf="@+id/player2EditText"
+            app:layout_constraintEnd_toStartOf="@+id/playerXEditText"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent" />
 
         <EditText
-            android:id="@+id/player2EditText"
+            android:id="@+id/playerXEditText"
             android:layout_width="147dp"
             android:layout_height="55dp"
             android:layout_marginBottom="12dp"
@@ -191,16 +192,16 @@
             app:layout_constraintBottom_toTopOf="@+id/guideline9"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/player1EditText" />
+            app:layout_constraintStart_toEndOf="@+id/playerOEditText" />
 
         <TextView
             android:id="@+id/textView"
             android:layout_width="102dp"
             android:layout_height="29dp"
-            android:text="Player 1"
+            android:text="Player O"
             android:textAlignment="center"
-            app:layout_constraintBottom_toTopOf="@+id/player1EditText"
-            app:layout_constraintStart_toStartOf="@+id/player1EditText"
+            app:layout_constraintBottom_toTopOf="@+id/playerOEditText"
+            app:layout_constraintStart_toStartOf="@+id/playerOEditText"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="1.0" />
 
@@ -208,10 +209,10 @@
             android:id="@+id/textView2"
             android:layout_width="93dp"
             android:layout_height="31dp"
-            android:text="Player 2"
+            android:text="Player X"
             android:textAlignment="center"
-            app:layout_constraintBottom_toTopOf="@+id/player2EditText"
-            app:layout_constraintStart_toStartOf="@+id/player2EditText"
+            app:layout_constraintBottom_toTopOf="@+id/playerXEditText"
+            app:layout_constraintStart_toStartOf="@+id/playerXEditText"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="1.0" />
 
