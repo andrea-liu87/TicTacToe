@@ -12,7 +12,7 @@
         android:layout_height="match_parent">
 
         <Button
-            android:id="@+id/end_button"
+            android:id="@+id/endButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -166,6 +166,54 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             app:layout_constraintGuide_begin="518dp" />
+
+        <EditText
+            android:id="@+id/player1EditText"
+            android:layout_width="153dp"
+            android:layout_height="56dp"
+            android:layout_marginBottom="12dp"
+            android:ems="10"
+            android:hint="Enter name"
+            android:inputType="textPersonName"
+            app:layout_constraintBottom_toTopOf="@+id/guideline9"
+            app:layout_constraintEnd_toStartOf="@+id/player2EditText"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <EditText
+            android:id="@+id/player2EditText"
+            android:layout_width="147dp"
+            android:layout_height="55dp"
+            android:layout_marginBottom="12dp"
+            android:ems="10"
+            android:hint="Enter name"
+            android:inputType="textPersonName"
+            app:layout_constraintBottom_toTopOf="@+id/guideline9"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/player1EditText" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="102dp"
+            android:layout_height="29dp"
+            android:text="Player 1"
+            android:textAlignment="center"
+            app:layout_constraintBottom_toTopOf="@+id/player1EditText"
+            app:layout_constraintStart_toStartOf="@+id/player1EditText"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="93dp"
+            android:layout_height="31dp"
+            android:text="Player 2"
+            android:textAlignment="center"
+            app:layout_constraintBottom_toTopOf="@+id/player2EditText"
+            app:layout_constraintStart_toStartOf="@+id/player2EditText"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0" />
 
     </android.support.constraint.ConstraintLayout>
 
