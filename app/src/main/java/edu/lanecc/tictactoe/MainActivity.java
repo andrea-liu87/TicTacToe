@@ -1,4 +1,4 @@
-package edu.andreasgift.tictactoe;
+package edu.lanecc.tictactoe;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -12,7 +12,6 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.andreasgift.tictactoe.R;
 
 public class MainActivity extends AppCompatActivity
         implements TextView.OnEditorActionListener {
@@ -39,7 +38,7 @@ public class MainActivity extends AppCompatActivity
         playerXEditText = findViewById(R.id.playerXEditText);
         playerXEditText.setOnEditorActionListener(this);
         endButton = findViewById(R.id.resetButton);
-        endButton.setVisibility(View.VISIBLE);
+        endButton.setVisibility(View.INVISIBLE);
     }
 
     /*************** Event handlers *************************/
@@ -60,6 +59,7 @@ public class MainActivity extends AppCompatActivity
         String playerName = "";
         if(i == EditorInfo.IME_ACTION_DONE ||
                 i == EditorInfo.IME_ACTION_UNSPECIFIED ||
+                i == EditorInfo.IME_ACTION_NEXT ||
                 keyEvent.getKeyCode() == KeyEvent.KEYCODE_ENTER) {
 
             playerName = playerOEditText.getText().toString();

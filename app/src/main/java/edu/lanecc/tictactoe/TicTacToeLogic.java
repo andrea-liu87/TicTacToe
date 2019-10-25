@@ -1,4 +1,4 @@
-package edu.andreasgift.tictactoe;
+package edu.lanecc.tictactoe;
 
 
 public class TicTacToeLogic {

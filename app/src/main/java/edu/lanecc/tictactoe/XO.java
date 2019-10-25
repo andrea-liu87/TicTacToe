@@ -1,4 +1,4 @@
-package edu.andreasgift.tictactoe;
+package edu.lanecc.tictactoe;
 
 public enum XO {
     X, O, Empty
