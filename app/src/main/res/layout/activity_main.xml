@@ -6,124 +6,167 @@
     android:layout_height="match_parent"
     tools:context="com.andreasgift.tictactoe.MainActivity">
 
-    <Button android:layout_gravity="center"
-        android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
-        android:id="@+id/end_button"
-        android:fontFamily="holo"
-        android:textSize="20sp"
-        android:visibility="invisible"
-        android:onClick="endButton"/>
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/constraint_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-    <GridLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_margin="10dp"
-        android:background="@android:color/darker_gray"
-        android:id="@+id/grid_layout"
-        android:columnCount="3"
-        android:rowCount="3">
-
-        <ImageView
-            android:id="@+id/imageview0"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:layout_columnWeight="1"
-            android:layout_margin="10dp"
-            android:layout_rowWeight="1"
-            android:background="@android:color/white"
-            android:onClick="dropIn"
-            android:tag="0" />
-
-        <ImageView
-            android:id="@+id/imageview1"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:layout_columnWeight="1"
-            android:layout_margin="10dp"
-            android:layout_rowWeight="1"
-            android:background="@android:color/white"
-            android:onClick="dropIn"
-            android:tag="1" />
-
-        <ImageView
-            android:id="@+id/imageview2"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:layout_columnWeight="1"
-            android:layout_margin="10dp"
-            android:layout_rowWeight="1"
-            android:background="@android:color/white"
-            android:onClick="dropIn"
-            android:tag="2" />
-
-        <ImageView
-            android:id="@+id/imageview3"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:layout_columnWeight="1"
-            android:layout_margin="10dp"
-            android:layout_rowWeight="1"
-            android:background="@android:color/white"
-            android:onClick="dropIn"
-            android:tag="3" />
-
-        <ImageView
-            android:id="@+id/imageview4"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:layout_columnWeight="1"
-            android:layout_margin="10dp"
-            android:layout_rowWeight="1"
-            android:background="@android:color/white"
-            android:onClick="dropIn"
-            android:tag="4" />
-
-        <ImageView
-            android:id="@+id/imageview5"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:layout_columnWeight="1"
-            android:layout_margin="10dp"
-            android:layout_rowWeight="1"
-            android:background="@android:color/white"
-            android:onClick="dropIn"
-            android:tag="5" />
-
-        <ImageView
-            android:id="@+id/imageview6"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:layout_columnWeight="1"
-            android:layout_margin="10dp"
-            android:layout_rowWeight="1"
-            android:background="@android:color/white"
-            android:onClick="dropIn"
-            android:tag="6" />
-
-        <ImageView
-            android:id="@+id/imageview7"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:layout_columnWeight="1"
-            android:layout_margin="10dp"
-            android:layout_rowWeight="1"
-            android:background="@android:color/white"
-            android:onClick="dropIn"
-            android:tag="7" />
+        <Button
+            android:id="@+id/end_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:onClick="endButton"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/guideline10" />
 
         <ImageView
             android:id="@+id/imageview8"
             android:layout_width="80dp"
             android:layout_height="80dp"
-            android:layout_columnWeight="1"
             android:layout_margin="10dp"
-            android:layout_rowWeight="1"
-            android:background="@android:color/white"
+            android:background="@android:color/darker_gray"
+            android:contentDescription="@string/square_for_x_or_o"
             android:onClick="dropIn"
-            android:tag="8" />
+            android:tag="8"
+            app:layout_constraintBottom_toTopOf="@+id/guideline10"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/imageview7" />
 
-    </GridLayout>
+        <ImageView
+            android:id="@+id/imageview7"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_margin="10dp"
+            android:background="@android:color/darker_gray"
+            android:contentDescription="@string/square_for_x_or_o"
+            android:onClick="dropIn"
+            android:tag="7"
+            app:layout_constraintBottom_toTopOf="@+id/guideline10"
+            app:layout_constraintEnd_toStartOf="@+id/imageview8"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/imageview6" />
+
+        <ImageView
+            android:id="@+id/imageview5"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_margin="10dp"
+            android:background="@android:color/darker_gray"
+            android:contentDescription="@string/square_for_x_or_o"
+            android:onClick="dropIn"
+            android:tag="5"
+            app:layout_constraintBottom_toTopOf="@+id/imageview8"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/imageview4"
+            app:layout_constraintTop_toBottomOf="@+id/imageview2" />
+
+        <ImageView
+            android:id="@+id/imageview2"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_margin="10dp"
+            android:background="@android:color/darker_gray"
+            android:contentDescription="@string/square_for_x_or_o"
+            android:onClick="dropIn"
+            android:tag="2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/imageview1"
+            app:layout_constraintTop_toTopOf="@+id/guideline9" />
+
+        <ImageView
+            android:id="@+id/imageview1"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_margin="10dp"
+            android:background="@android:color/darker_gray"
+            android:contentDescription="@string/square_for_x_or_o"
+            android:onClick="dropIn"
+            android:tag="1"
+            app:layout_constraintEnd_toStartOf="@+id/imageview2"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/imageview0"
+            app:layout_constraintTop_toTopOf="@+id/guideline9" />
+
+        <ImageView
+            android:id="@+id/imageview4"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_margin="10dp"
+            android:background="@android:color/darker_gray"
+            android:contentDescription="@string/square_for_x_or_o"
+            android:onClick="dropIn"
+            android:tag="4"
+            app:layout_constraintBottom_toTopOf="@+id/imageview7"
+            app:layout_constraintEnd_toStartOf="@+id/imageview5"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/imageview3"
+            app:layout_constraintTop_toBottomOf="@+id/imageview1" />
+
+        <ImageView
+            android:id="@+id/imageview6"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_margin="10dp"
+            android:background="@android:color/darker_gray"
+            android:contentDescription="@string/square_for_x_or_o"
+            android:onClick="dropIn"
+            android:tag="6"
+            app:layout_constraintBottom_toTopOf="@+id/guideline10"
+            app:layout_constraintEnd_toStartOf="@+id/imageview7"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <ImageView
+            android:id="@+id/imageview3"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_margin="10dp"
+            android:background="@android:color/darker_gray"
+            android:contentDescription="@string/square_for_x_or_o"
+            android:onClick="dropIn"
+            android:tag="3"
+            app:layout_constraintBottom_toTopOf="@+id/imageview6"
+            app:layout_constraintEnd_toStartOf="@+id/imageview4"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageview0" />
+
+        <ImageView
+            android:id="@+id/imageview0"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_margin="10dp"
+            android:background="@android:color/darker_gray"
+            android:contentDescription="@string/square_for_x_or_o"
+            android:onClick="dropIn"
+            android:tag="0"
+            app:layout_constraintEnd_toStartOf="@+id/imageview1"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/guideline9" />
+
+        <android.support.constraint.Guideline
+            android:id="@+id/guideline9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="141dp" />
+
+        <android.support.constraint.Guideline
+            android:id="@+id/guideline10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="518dp" />
+
+    </android.support.constraint.ConstraintLayout>
 
 </FrameLayout>

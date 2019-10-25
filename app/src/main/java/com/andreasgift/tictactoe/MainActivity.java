@@ -1,15 +1,10 @@
 package com.andreasgift.tictactoe;
 
-import android.media.Image;
-import android.support.v7.app.ActionBar;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
-import android.widget.GridLayout;
 import android.widget.ImageView;
-import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -72,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
     public void endButton (View view){
         for (int i = 0 ; i<gameState.length; i++){
             gameState[i]=2;
-            ImageView imageView = (ImageView)findViewById(R.id.grid_layout).findViewWithTag(String.valueOf(i)
+            ImageView imageView = (ImageView)findViewById(R.id.constraint_layout).findViewWithTag(String.valueOf(i)
             );
             imageView.setImageResource(0);
             endButton.setVisibility(View.INVISIBLE);
